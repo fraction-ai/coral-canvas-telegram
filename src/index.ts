@@ -1,6 +1,7 @@
 import { Bot } from "grammy";
 import dotenv from "dotenv";
 import { registerCommands } from "./commands";
+import { run } from "@grammyjs/runner";
 
 // Load environment variables
 dotenv.config();
@@ -13,9 +14,9 @@ if (!process.env.BOT_TOKEN) {
 // Create bot instance
 const bot = new Bot(process.env.BOT_TOKEN);
 
-registerCommands(bot)
+registerCommands(bot);
 
 // Start the bot
-bot.start();
+run(bot);
 console.log("Bot is running...");
 
