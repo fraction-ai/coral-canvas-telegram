@@ -16,6 +16,7 @@ const bot = new Bot(process.env.BOT_TOKEN);
 
 registerCommands(bot);
 
+bot.api.deleteWebhook({ drop_pending_updates: true });
 // Start the bot
 run(bot);
 console.log("Bot is running...");
